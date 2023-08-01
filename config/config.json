@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": "manish",
+    "password": "manish",
+    "database": "blog_plantix",
+    "host": "127.0.0.1",
+    "port": "3308",
+    "dialect": "mysql",
+    "use_env_variable":false
+  },
+  "production": {
+    "username": "manish",
+    "password": "manish1990",
+    "database": "plantixblog",
+    "host": "databaseblog.cbk5hkavbhox.us-east-1.rds.amazonaws.com",
+    "port": "3306",
+    "dialect": "mysql",
+    "use_env_variable":false
+  }
+}

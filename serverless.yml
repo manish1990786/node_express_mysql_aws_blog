@@ -1,0 +1,39 @@
+service: plantixblogservice
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 2048
+
+functions:
+  registerUser:
+    handler: handlers/user-handler.registerUser
+    events:
+     - httpApi:
+         path: /user/create
+         method: post
+  showPost:
+    handler: handlers/get-post-handler.showPost
+    events:
+     - httpApi:
+         path: /post/{id}
+         method: get
+  showAllPostByUser:
+    handler: handlers/get-all-post-user-handler.showAllPostByUser
+    events:
+     - httpApi:
+         path: /all-post-user/{id}
+         method: get
+  savePost:
+    handler: handlers/create-post-handler.savePost
+    events:
+     - httpApi:
+         path: /post/create
+         method: post
+  saveComment:
+    handler: handlers/comment-handler.saveComment
+    events:
+     - httpApi:
+         path: /comment/save
+         method: post
